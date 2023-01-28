@@ -87,11 +87,25 @@ else
 }*/
  
    //  ----------------------------------------------------------------------------
+Console.Write("Input first number = ");
+int num1 = Convert.ToInt32(Console.ReadLine());
+Console.Write("Input second number = ");
+int num2 = Convert.ToInt32(Console.ReadLine());
+Console.Write("Input third number = ");
+int num3 = Convert.ToInt32(Console.ReadLine());
 
+int max = num1;
+
+if (num1>max) max=num1;
+if (num2>max) max=num2;
+if (num3>max) max=num3;
+  
+  Console.WriteLine("Maximum = " +max);  
+   
    // Задача 6: Напишите программу, которая на вход принимает число и выдаёт,
    // является ли число чётным (делится ли оно на два без остатка). 
 
-Console.Write("Input your number = ");
+/*Console.Write("Input your number = ");
 int num = Convert.ToInt32(Console.ReadLine());
 
 if (num % 2==0)
@@ -101,7 +115,7 @@ if (num % 2==0)
 else
 {
   Console.WriteLine("Uneven number ");
-}
+}*/
 
 //Задача 8: Напишите программу, которая на вход принимает число (N), 
 //а на выходе показывает все чётные числа от 1 до N.
