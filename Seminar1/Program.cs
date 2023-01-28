@@ -54,7 +54,7 @@ else
 //Задача 4: Напишите программу, которая принимает на вход три числа 
 //и выдаёт максимальное из этих чисел.
 
-Console.Write("Input first number = ");
+/*Console.Write("Input first number = ");
 int num1 = Convert.ToInt32(Console.ReadLine());
 Console.Write("Input second number = ");
 int num2 = Convert.ToInt32(Console.ReadLine());
@@ -84,6 +84,38 @@ else
     {
         Console.WriteLine("Maximum = " + num1);
     }
-}
-       
+}*/
+ 
+   //  ----------------------------------------------------------------------------
 
+   // Задача 6: Напишите программу, которая на вход принимает число и выдаёт,
+   // является ли число чётным (делится ли оно на два без остатка). 
+
+Console.Write("Input your number = ");
+int num = Convert.ToInt32(Console.ReadLine());
+
+if (num % 2==0)
+{
+  Console.WriteLine("Even number ");
+}
+else
+{
+  Console.WriteLine("Uneven number ");
+}
+
+//Задача 8: Напишите программу, которая на вход принимает число (N), 
+//а на выходе показывает все чётные числа от 1 до N.
+
+/*Console.Write("Input your number = ");
+int num = Convert.ToInt32(Console.ReadLine());
+int current = num;
+
+while (current>=1)
+{
+  if (current %2 == 0)
+  {
+    Console.WriteLine("number = " + current);
+  }
+  current = current - 1;
+}
+*/
