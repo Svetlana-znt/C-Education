@@ -157,7 +157,7 @@ while(position<count)
  //-----------------------------------------------------------------------
 // Задача 15: Напишите программу, которая принимает на вход цифру, 
 //обозначающую день недели, и проверяет, является ли этот день выходным.
-
+/*
 bool WeekEnd(int day)
 {
   bool result = false;
@@ -170,7 +170,41 @@ bool WeekEnd(int day)
 Console.WriteLine("Input week day =");
 int day = Convert.ToInt32(Console.ReadLine());
 bool result = WeekEnd(day);
-Console.WriteLine(result);
+Console.WriteLine(result);*/
+
+//---------------------------------------------------------------------------
+//Задача 2: Напишите программу, которая на вход принимает два числа 
+//и выдаёт, какое число большее, а какое меньшее.
+/*
+int MaxNumber(int num1, int num2)
+{
+  int max = num1;
+  if (num2>num1)
+  {
+    max = num2;
+  }
+  return max;
+}
+Console.WriteLine("Input number 1 = ");
+int num1 = Convert. ToInt32(Console.ReadLine());
+Console.WriteLine("Input number 2 = ");
+int num2 = Convert.ToInt32(Console.ReadLine());
+int max = MaxNumber(num1, num2);
+Console.WriteLine("Maximum = " +max);*/
+//----------------------------------------------------------
+// Задача 6: Напишите программу, которая на вход принимает число и выдаёт,
+   // является ли число чётным (делится ли оно на два без остатка). 
+bool EvenNum(int number)
+{
+  bool result = false;
+  if(number%2 == 0) result = true; 
+  return result;
+}
+Console.WriteLine("Input number = ");
+int number = Convert.ToInt32(Console.ReadLine());
+bool result = EvenNum(number);
+Console.WriteLine("Result is = " +result);
+
 
 
 
