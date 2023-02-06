@@ -35,7 +35,7 @@ Console.WriteLine("Input your number = ");
 int num = Convert.ToInt32(Console.ReadLine());
 int Factorial = ProisvNumber(num);
 Console.WriteLine("Факториал =" +Factorial);*/
-
+/*
 int[] CreateRandomArray(int size, int MinValue, int MaxValue)
 {
     int[] array = new int[size];
@@ -59,5 +59,66 @@ Console.Write("Input a max possible value = ");
 int max= Convert.ToInt32(Console.ReadLine());
 
 int[] myArray = CreateRandomArray(length, min, max);
-ShowArray(myArray);
+ShowArray(myArray);*/
+
+//---------------------------------------------------------------------------
+
+//Задача 25: Напишите цикл, который принимает на вход два числа (A и B)
+// и возводит число A в натуральную степень B.
+/*
+double PowNum(int numA, int numB)
+{
+    double result = Math.Pow(numA, numB);
+    return result;
+}
+Console.WriteLine("Input numA = ");
+int numA = Convert.ToInt32(Console.ReadLine());
+Console.WriteLine("Input numB = ");
+int numB = Convert.ToInt32(Console.ReadLine());
+double pownum = PowNum(numA, numB);
+Console.WriteLine("А в стпенеи В = " + pownum);*/
+
+//-----------------------------------------------------------------------------------------
+//Задача 27: Напишите программу, которая принимает на вход число и выдаёт сумму цифр в числе.
+/*
+int NumSum(int num)
+{
+    int sum = 0;
+    while(num/10 != 0 || num%10 != 0)
+    {
+       sum = sum + num%10;
+       num = num/10;
+    }
+    return sum;
+}
+Console.WriteLine("Input your number = ");
+int num = Convert.ToInt32(Console.ReadLine());
+int sumnum = NumSum(num);
+Console.WriteLine(sumnum);*/
+
+//----------------------------------------------------------------------------------------------
+
+//Задача 29: Напишите программу, которая задаёт массив из m элементов и выводит их на экран.
+
+void Array(int [] collection)
+{
+
+    for(int index =0; index<collection.Length; index++)
+    {
+    Console.WriteLine("  Input element number "+ index + "  = ");
+    collection [index]= Convert.ToInt32(Console.ReadLine());
+    }
+}
+
+ void PrintArray(int[] coll)
+ {
+for (int current = 0; current<coll.Length;current++)
+    {
+    Console.Write("  " + coll[current]);
+    }
+ }
+ int [] array = new int [5];
+ Array(array);
+  PrintArray(array);
+
 
