@@ -99,26 +99,113 @@ Console.WriteLine(sumnum);*/
 //----------------------------------------------------------------------------------------------
 
 //Задача 29: Напишите программу, которая задаёт массив из m элементов и выводит их на экран.
-
+/*
 void Array(int [] collection)
 {
 
     for(int index =0; index<collection.Length; index++)
     {
-    Console.WriteLine("  Input element number "+ index + "  = ");
-    collection [index]= Convert.ToInt32(Console.ReadLine());
+        Console.WriteLine("  Input element number "+ index + "  = ");
+        collection [index]= Convert.ToInt32(Console.ReadLine());
     }
 }
 
  void PrintArray(int[] coll)
  {
-for (int current = 0; current<coll.Length;current++)
+ for (int current = 0; current<coll.Length;current++)
     {
-    Console.Write("  " + coll[current]);
+        Console.Write("  " + coll[current] + "   ");
     }
  }
- int [] array = new int [5];
+ Console.WriteLine("Input array size = ");
+ int size = Convert.ToInt32(Console.ReadLine());
+ int [] array = new int [size];
  Array(array);
-  PrintArray(array);
+  PrintArray(array);*/
+//-----------------------------------------------------------------------------------------------------
+/*
+void Array(int[] collection)
+{
+    for(int index = 0; index<collection.Length; index++)
+    {
+        Console.WriteLine("Input element number  "+ index + " = ");
+        collection [index] = Convert.ToInt32(Console.ReadLine()); 
+    }
+}
+void PrintArray(int [] collection)
+{
+    for (int current = 0; current<collection.Length; current++)
+    {
+        Console.Write("   "+ collection [current] +"   ");
+    }
+}
+int MaxElement(int [] collection)
+{
+    int max = collection [0];
+    for(int count = 1; count<collection.Length; count++)
+    {
+        if (collection[count]>max) max = collection[count];   
+    }
+    return max;
+}
+Console.WriteLine("Input array size = ");
+int size = Convert.ToInt32(Console.ReadLine());
+int [] array = new int [size];
+Array(array);
+PrintArray(array);
+Console.WriteLine();
+int max = MaxElement(array);
+Console.WriteLine("Your max number is =" +max);*/
+//-----------------------------------------------------------------------------------------------
 
+/*void Compare (int[] nums1, int[] nums2)
+{
+    int sumnum1 = Sum(nums1);
+    int sumnum2 = Sum(nums2);
+    if (sumnum1>sumnum2)
+        Console.WriteLine("Сумма чисел массива 1 больше");
+    else if (sumnum1<sumnum2)
+        Console.WriteLine("Сумма чисел массива 2 больше");
+    else
+        Console.WriteLine("Сумма чисел массива 1= сумме чисел массива 2");
+    int Sum(int[] nums)
+    {
+        int result = 0;
+               
+        foreach(int num in nums)
+        result +=num;
+        return result;
+    } 
+}
+int[] numbers1 = {1, 4, 22};
+int[] numbers2 = {1, 1, 15, 3};
+Compare(numbers1, numbers2);*/
+
+//-------------------------------------------------------------------------------------
+
+void Compare(int[] nums1, int[] nums2)
+{
+    int fact1 = FNum(nums1);
+    int fact2 = FNum(nums2);
+    if (fact1 > fact2)
+    
+    Console.WriteLine("Comp array 1 ");
+    else if (fact1 < fact2)  Console.WriteLine("Comp array 2");
+    else  Console.WriteLine("Comp array 1 and 2");
+   }
+
+int FNum(int[] collections)
+{
+    int result = 1;
+    foreach(int collection in collections)
+    result *=collection;
+    return result;
+}
+int[] nums1 = {2,5,3,8};
+int[] nums2 = {1,3,2,4};
+int fact1 = FNum(nums1);
+Console.WriteLine("Произведение элементов массива 1 = " + fact1);
+int fact2 = FNum(nums2);
+Console.WriteLine("Произведение элементов массива 2 = " + fact2);
+Compare(nums1, nums2);
 
