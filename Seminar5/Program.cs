@@ -200,17 +200,17 @@ Console.WriteLine(count);*/
 //Задача 36: Задайте одномерный массив, заполненный случайными числами. 
 // Найдите сумму элементов, стоящих на нечётных позициях.
 /*
-int RandomArray(int size, int minValue, int maxValue)
+int[] RandomArray(int size, int minValue, int maxValue)
 {
     int[] randomarray = new int[size];
     for(int index = 0; index < size; index++)
         randomarray[index] = new Random().Next(minValue, maxValue);
     return randomarray;
 }
-void ShowRandomArray(int[] newarray)
+void ShowRandomArray(int[] array)
 {
-    for(int i = 0; i<newarray.Length; i++)
-        Console.Write(newarray[i] + "   ");
+    for(int i = 0; i<array.Length; i++)
+        Console.Write(array[i] + "   ");
         Console.WriteLine();
 }
 int SumOddNumbersPosition(int[] collection)
@@ -236,11 +236,11 @@ Console.WriteLine(Sum);*/
 //Задача 38: Задайте массив вещественных чисел. 
 //Найдите разницу между максимальным и минимальным элементов массива.
 
-double FloatArray(int size, int minnum, int maxnum)
+double[] FloatArray(int size, int minnum, int maxnum)
 {
     double[] collection = new double[size];
     for(int i = 0; i<size; i++)
-        collection[i] = new Random.NextDouble() + new Random().Next(minnum, maxnum);
+        collection[i] = new Random().NextDouble() + new Random().Next(minnum, maxnum);
     return collection; 
 }
 void ShowFloatArray(double[] collection)
@@ -249,18 +249,17 @@ void ShowFloatArray(double[] collection)
         Console.Write(collection [i] + "  ");
         Console.WriteLine();
 }
-
 double DifNumber(double[] collection)
 {
     double max = collection[0];
     double min = collection[0];
     for(int index = 1; index<collection.Length; index++)
     {
-        if(collection[index]>max) {max = collection[index];}
-        if(collection[index]<min) {min = collection[index];}
-    double difnum = max - min;
-    return difnum;
+        if(collection[index]>max) max = collection[index];
+        if(collection[index]<min) min = collection[index];
     }
+     double difnum = max - min;
+    return difnum;
 }
 Console.WriteLine("Input size of array = ");
 int size = Convert.ToInt32(Console.ReadLine());
@@ -268,7 +267,7 @@ Console.WriteLine("Input min value of element = ");
 int minnum = Convert.ToInt32(Console.ReadLine());
 Console.WriteLine("Input max value of element = ");
 int maxnum = Convert.ToInt32(Console.ReadLine());
-double[] collection = Math.Round(FloatArray(size, minnum, maxnum),2);
+double[] collection = FloatArray(size, minnum, maxnum);
 ShowFloatArray(collection);
 double difnum = Math.Round(DifNumber(collection),2);
 Console.WriteLine(difnum);

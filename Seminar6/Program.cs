@@ -44,6 +44,7 @@ ShowArray(NewArray(10, 0, 1));*/
 //----------------------------------------------------------------------------------------------
 //Напишите программу, которая будет создавать копию заданного массива с помощью 
 //поэлементного копирования.
+/*
 int[] RandomCollection(int size, int minvalue, int maxvalue)
 {
     int[] randomarray = new int[size];
@@ -76,4 +77,52 @@ int maxvalue = Convert.ToInt32(Console.ReadLine());
 int[] randomarray = RandomCollection(size, minvalue, maxvalue);
 PrintCollection(randomarray);
 int[] copiedarray = CopyArray(randomarray);
-PrintCollection(copiedarray);
+PrintCollection(copiedarray);*/
+
+//Задача 41: Пользователь вводит с клавиатуры M чисел. Посчитайте, сколько чисел больше 0 ввёл пользователь.
+
+ /*
+    int count = 0;
+    int i = 0;
+    for(; ;)  
+    {  
+        Console.WriteLine("Input your number = ");
+        int number = Convert.ToInt32(Console.ReadLine());
+        if(number>0) 
+        {
+            count++;        
+        }
+        i++;
+        Console.WriteLine($"Общее количество чисел = {i}");
+        Console.WriteLine($"Количество положительных чисел = {count}");
+    }*/
+
+//----------------------------------------------------------------------------------------------------
+//Задача 43: Напишите программу, которая найдёт точку пересечения двух прямых, 
+//заданных уравнениями y = k1 * x + b1, y = k2 * x + b2; значения b1, k1, b2 и k2 задаются пользователем.
+
+void CrossPoint(double b1, double k1, double b2, double k2)
+{ 
+    double x = 99999;
+    double y = 99999;
+    if (k1 !=k2)
+    {
+        x = Math.Round((b2 - b1)/(k1 - k2),2); 
+        y = Math.Round(k1*x + b1,2);
+    }
+     Console.WriteLine($"RКоординаты точки пересечения = {x},{y}");     
+}
+
+
+Console.WriteLine("Input b1 = " );
+double b1 = Convert.ToDouble(Console.ReadLine());
+Console.WriteLine("Input k1 = ");
+double k1 = Convert.ToDouble(Console.ReadLine());
+Console.WriteLine("Input b2 = ");
+double b2 = Convert.ToDouble(Console.ReadLine());
+Console.WriteLine("Input k2 = ");
+double k2 = Convert.ToDouble(Console.ReadLine());
+CrossPoint(b1, k1, b2, k2);
+
+
+
