@@ -103,15 +103,21 @@ PrintCollection(copiedarray);*/
 
 void CrossPoint(double b1, double k1, double b2, double k2)
 { 
-    double x = 99999;
-    double y = 99999;
+   
     if (k1 !=k2)
     {
-        x = Math.Round((b2 - b1)/(k1 - k2),2); 
-        y = Math.Round(k1*x + b1,2);
-    }
-     Console.WriteLine($"RКоординаты точки пересечения = {x},{y}");     
+        double  x = Math.Round((b2 - b1)/(k1 - k2),2); 
+        double y = Math.Round(k1*x + b1,2);
+        Console.WriteLine($"RКоординаты точки пересечения = {x},{y}");
+    } 
+         
+     else if(k1 == k2 && b1 !=b2) 
+        Console.WriteLine("Прямые параллельны");
+     else if(k1 == k2 && b1 == b2) 
+        Console.WriteLine("Прямые совпадают");
 }
+
+
 
 
 Console.WriteLine("Input b1 = " );
