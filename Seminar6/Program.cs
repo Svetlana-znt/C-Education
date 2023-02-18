@@ -117,9 +117,6 @@ void CrossPoint(double b1, double k1, double b2, double k2)
         Console.WriteLine("Прямые совпадают");
 }
 
-
-
-
 Console.WriteLine("Input b1 = " );
 double b1 = Convert.ToDouble(Console.ReadLine());
 Console.WriteLine("Input k1 = ");
