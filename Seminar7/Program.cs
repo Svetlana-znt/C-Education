@@ -145,6 +145,7 @@ void MakeKvadratEvenNumbers(int[,] array)
 //Задайте двумерный массив. Найдите сумму элементов, 
 //находящихся на главной диагонали (с индексами (0,0); (1;1) и т.д.
 
+
 int[,] FillArray(int rows, int columns)
 {
     int[,] matrix = new int[rows, columns];
@@ -170,6 +171,7 @@ void PrintArray(int [,] matr)
     }
     Console.WriteLine();
 }
+/*
 int SumElementMainDiagonal(int[,] array)
 {
     int sum = 0;
@@ -189,4 +191,29 @@ int SumElementMainDiagonal(int[,] array)
     int[,] array = FillArray(rows, columns);
     PrintArray(array);
     int sum = SumElementMainDiagonal(array);
-    Console.WriteLine($"Сумма элементов главной диагонали = {sum} ");
+    Console.WriteLine($"Сумма элементов главной диагонали = {sum} ");*/
+    //--------------------------------------------------------------------------------------
+    //Задача 50. Напишите программу, которая на вход принимает позиции элемента в двумерном массиве, 
+    //и возвращает значение этого элемента или же указание, что такого элемента нет.
+    bool PositionElement(int[,] array)
+    {
+        int position = 0;
+        bool result = true;
+        for(int i = 0; i<array.GetLength(0); i++)
+        {
+            for(int j=0; j<array.GetLength(1); j++)
+            {
+                if(position>=i && position>=j)
+               result = false;
+            }
+        }
+    }
+    Console.WriteLine("Input number rows = ");
+    int rows = Convert.ToInt32(Console.ReadLine());
+    Console.WriteLine("Input number columns = ");
+    int columns = Convert.ToInt32(Console.ReadLine());
+    int[,] array = FillArray(rows, columns);
+    PrintArray(array);
+    bool elementOfArray = PositionElement(array);
+
+
