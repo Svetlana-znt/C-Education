@@ -134,7 +134,6 @@ int[] PositionMinElemeentArray(int[,] array)
     return pos;
 }
 
-
 int[,] DeleteRowColumnMinElement(int[,] array, int[] pos)
 {
     int[,] newArray = new int[array.GetLength(0)-1, array.GetLength(1)-1];
