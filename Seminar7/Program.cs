@@ -324,24 +324,24 @@ void ShowArray(int[,] array)
         {
             Console.Write($"{array[i,j]} ");
         }
-    Console.WriteLine();
+        Console.WriteLine();
     }
-Console.WriteLine();
+    Console.WriteLine();
 }
 
 double[] AverageOfColumnArray(int[,] array)
 {
-double[] averageColumnElement = new double[array.GetLength(1)];
-for(int j = 0; j<array.GetLength(1); j++)
-    {  
-    double[] average = new double[array.GetLength(1)];      
-    for(int i = 0; i<array.GetLength(0); i++)
-        {
-            average[j]+= array[i,j];
+    double[] averageColumnElement = new double[array.GetLength(1)];
+    for(int j = 0; j<array.GetLength(1); j++)
+        {  
+        double[] average = new double[array.GetLength(1)];      
+        for(int i = 0; i<array.GetLength(0); i++)
+            {
+                average[j]+= array[i,j];
+            }
+        averageColumnElement[j] = average[j]/(array.GetLength(0));
         }
-    averageColumnElement[j] = average[j]/(array.GetLength(0));
-    }
-     return averageColumnElement;
+    return averageColumnElement;
 }
 
 void PrintArray(double[] array)
