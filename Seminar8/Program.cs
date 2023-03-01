@@ -376,7 +376,7 @@ int InputNumbers(string input)
     int output = Convert.ToInt32(Console.ReadLine());
     return output;
 }
-
+/*
 int[,,] CreateRandomArray()
 {
     int rows = InputNumbers("Input quantity rows: ");
@@ -398,7 +398,7 @@ int[,,] CreateRandomArray()
         }
         return matrix;  
     }
-
+*/
 void PrintMatrix(int[,,] matrix)
 {
     for (int i = 0; i <  matrix.GetLength(0); i++)
@@ -415,13 +415,19 @@ void PrintMatrix(int[,,] matrix)
     Console.WriteLine();      
 }
 
-int[,,] CreateArray(int[,,] array3D)
+int[,,] CreateArray()
 {
-    int[] temp = new int[array3D.GetLength(0) * array3D.GetLength(1) * array3D.GetLength(2)];
+    int rows = InputNumbers("Input quantity rows: ");
+    int columns = InputNumbers("Input quantity columns: ");
+    int depth = InputNumbers("Input quantity depth: ");
+    int minValue = InputNumbers("Input minValue: ");
+    int maxValue = InputNumbers("Input maxValue: ");
+    int[,,] array3D = new int[rows, columns, depth];
+    int[] temp = new int[rows * columns * depth];
     int  number;
     for (int i = 0; i < temp.GetLength(0); i++)
         {
-            temp[i] = new Random().Next(1, 10);
+            temp[i] = new Random().Next(minValue, maxValue);
             number = temp[i];
             if (i >= 1)
             {
@@ -429,7 +435,7 @@ int[,,] CreateArray(int[,,] array3D)
                 {
                     while (temp[i] == temp[j])
                     {
-                        temp[i] = new Random().Next(1,10);
+                        temp[i] = new Random().Next(minValue,maxValue);
                         number = temp[i];
                     }
                         number = temp[i];
@@ -437,11 +443,11 @@ int[,,] CreateArray(int[,,] array3D)
             }
         }
     int count = 0; 
-        for (int x = 0; x < array3D.GetLength(0); x++)
+        for (int x = 0; x < rows; x++)
         {
-            for (int y = 0; y < array3D.GetLength(1); y++)
+            for (int y = 0; y < columns; y++)
             {
-                for (int z = 0; z < array3D.GetLength(2); z++)
+                for (int z = 0; z < depth; z++)
                 {
                     array3D[x, y, z] = temp[count];
                     count++;
@@ -451,10 +457,10 @@ int[,,] CreateArray(int[,,] array3D)
     return array3D;
 }
 
-int[,,] array3D = CreateRandomArray();
-PrintMatrix(array3D);
+//int[,,] array3D = CreateRandomArray();
+//PrintMatrix(array3D);
 Console.WriteLine();
-int[,,]unicumNumbergArray =CreateArray(array3D);
+int[,,]unicumNumbergArray =CreateArray();
 PrintMatrix(unicumNumbergArray);
 
 //--------------------------------------------------------------------------------------

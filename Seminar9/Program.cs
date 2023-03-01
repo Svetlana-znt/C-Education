@@ -17,6 +17,7 @@ ShowNumbers(-10,10);*/
 //------------------------------------------------------------------------------
 //Напишите программу, которая на вход принимает два числа A и B,
 // и возводит число А в целую степень B.
+/*
 double ShowPower(double a, double b)
 {
    if(b>0) return a * ShowPower(a, b-1);
@@ -24,4 +25,45 @@ double ShowPower(double a, double b)
    return 1;
 }
 
-Console.WriteLine(ShowPower(2,-3));
+Console.WriteLine(ShowPower(2,-3));*/
+
+//-----------------------------------------------------------------------
+//Задача 68: Напишите программу вычисления функции Аккермана 
+//с помощью рекурсии. Даны два неотрицательных числа m и n.
+/*
+double AkkermanFunction(double m, double n)
+{
+   if(m == 0) return n+1;
+   if((m !=0) && (n == 0))
+      return AkkermanFunction(m-1, 1);
+   else 
+      return AkkermanFunction(m-1, AkkermanFunction(m, n-1));
+}
+Console.WriteLine($"Значение функции Аккермана : {AkkermanFunction(3, 2)} ");
+*/
+
+//------------------------------------------------------------------------------------
+//Задача 64: Задайте значение N. 
+//Напишите программу, которая выведет все натуральные числа в промежутке от N до 1.
+/*
+void DescendingSortRow(int N)
+{ 
+   Console.Write(N+ " ");
+   if(N > 1) DescendingSortRow(N-1);    
+}
+
+Console.WriteLine("Убывающая последовательность чисел:");
+DescendingSortRow(8);*/
+
+//------------------------------------------------------------------------------------------
+//Задача 66: Задайте значения M и N. Напишите программу, 
+//которая найдёт сумму натуральных элементов в промежутке от M до N.
+
+int SumLineNumber(int M, int N)
+{
+   if(M<=N) return M + SumLineNumber(M+1, N);
+   return 0;
+}
+
+Console.WriteLine(SumLineNumber(4,8));
+
